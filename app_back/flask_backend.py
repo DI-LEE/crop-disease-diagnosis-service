@@ -44,4 +44,4 @@ def sendimage():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='54.241.195.149', port=5000)
