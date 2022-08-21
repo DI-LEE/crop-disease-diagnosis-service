@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, send_file
 import json
 import base64
-import object_detection.detect as od
+from object_detection import detect as od
+# import object_detection.detect as od
 
 app = Flask(__name__)
 static_dir = 'object_detection/data/images/'
