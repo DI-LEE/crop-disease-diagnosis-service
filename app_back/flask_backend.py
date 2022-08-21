@@ -1,7 +1,9 @@
+import sys
+sys.path.insert(0, '/home/ubuntu/projects/crop-disease-diagnosis-service/app_back')
 from flask import Flask, request, jsonify, send_file
 import json
 import base64
-import object_detection.detect as od
+import object_detection as od
 
 app = Flask(__name__)
 static_dir = 'object_detection/data/images/'
