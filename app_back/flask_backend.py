@@ -1,15 +1,10 @@
-import os
-from PIL import Image
-import io
-from flask import Flask, Blueprint, request, render_template, jsonify, Response, send_file
-import jsonpickle
-import numpy as np
+from flask import Flask, request, jsonify, send_file
 import json
 import base64
-import detect as od
+from object_detection import detect as od
 
 app = Flask(__name__)
-static_dir = 'data/images/'
+static_dir = 'object_detection/data/images/'
 r = request.method
 
 
@@ -26,7 +21,7 @@ def model():
         # captions = ic.~(static_dir + 'fuckyes.jpg)
         od_opt = od.parse_opt()
         od.main(od_opt)
-        with open('./runs/detect/exp/fuckyes.jpg', 'rb') as img:
+        with open('object_detection/runs/detect/exp/fuckyes.jpg', 'rb') as img:
             detections = base64.b64encode(img.read())
         # model_result = {"captions": captions, "detections": detections}
         model_result = {"detections": detections}
