@@ -19,6 +19,19 @@ from tensorflow.keras.layers import add
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 '''Hyperparameter'''
+def define_hyperparameter():
+    num_layer = 4
+    d_model = 512
+    dff = 2048
+    num_heads = 8
+    row_size = 8
+    col_size = 8
+    top_k = 10000
+    target_vocab_size = top_k + 1
+    #오버피팅 방지
+    dropout_rate = 0.2
+    return num_layer, d_model, dff, num_heads, row_size, top_k, target_vocab_size, col_size, dropout_rate
+
 num_layer = 4
 d_model = 512
 dff = 2048
@@ -306,6 +319,7 @@ class Transformer(tf.keras.Model):
 
 '''Define Transformer'''
 def define_transformer_weights():
+    num_layer, d_model, dff, num_heads, row_size, top_k, target_vocab_size, col_size, dropout_rate = define_hyperparameter()
     transformer = Transformer(num_layer,
                             d_model,
                             num_heads,
@@ -317,6 +331,6 @@ def define_transformer_weights():
                             rate=dropout_rate)
 
     '''load weights'''
-    transformer.load_weights("C:/Users/DI Lee/Desktop/weight/InceptionV3_transformer_weights_ffinal/")
+    transformer.load_weights("/home/ubuntu/projects/crop-disease-diagnosis-service/app_back/image_captioning/weight/")
 
     return transformer
