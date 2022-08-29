@@ -33,7 +33,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 # Requirements
 
 * `python==3.9`
-* `tensorflow==2.8.0`
+* `tensorflow-gpu==2.8.0`
 * `torch==1.12.1`
 * `flutter==3.0.5 `
 * `flask==2.2.2`
