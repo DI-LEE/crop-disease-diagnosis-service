@@ -122,7 +122,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 
  이 과정에서 ‘AWS EC2’에서 무료로 사용할 수 있는 인스턴스 유형의 CPU(1GB)/메모리(RAM 1GB) 한계와 우리가 제작한 모델의 용량 문제로 인해 서버에 과부하가 일어나는 문제가 발생하였고, 이를 해결하기 위하여 ‘AWS EC2’의 하드디스크의 일부 용량을 swap memory로 할당하였다. 이 과정을 통해 메모리에 여유를 주고, 서버의 부담이 줄어들면서 서버가 안정화되는 효과를 얻을 수 있었다.
 
-# Expected Effects
+# Benefits
 
  먼저 농업에 대한 이미지를 개선할 수 있다. 전문적인 관리 지식이 요구된다는 인식을 개선하여 농업에 대한 접근성을 향상할 수 있다. 
 
