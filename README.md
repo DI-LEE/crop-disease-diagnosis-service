@@ -61,12 +61,12 @@ crop disease diagnosis service application with image-captioning and object-dete
 
  도시농부 등 농업에 익숙하지 않은 초보 농부를 대상으로 한 작물 관리 앱을 개발하고자 했다. 질병에 감염된 것으로 의심되는 작물의 사진을 찍으면 인공지능 딥러닝 기술 기반의 모델을 거쳐 감염 환부를 바운딩 박스로 표시하고 환부에 대한 자세한 묘사와 함께 해당 질병을 진단하는 문장을 생성하도록 했다. 단순히 어떤 질병에 걸렸는지만 알려주는 것이 아니라 질병 감염 부위를 표시하고 감염 부위를 자세하게 묘사하여 질병 진단에 대한 명확한 근거를 제시할 수 있다. 또한 질병 자체를 진단함으로써 해당 질병에 감염될 수 있는 모든 작물에 대한 질병 진단을 가능하게 하여 작물별로 병을 진단하는 번거로움을 해소할 수 있도록 했다. 또한 진단의 정확도를 높이기 위해 정상적인 상태의 작물 사진이나 작물이 아닌 물체의 사진을 입력했을 때 질병이 진단되지 않도록 추가 데이터를 구축하여 모델을 학습시켰다. 감염된 작물의 질병이 진단되면 해당 질병의 발생 환경과 관리법을 소개하여 질병을 치료하고 예방하는 방법을 쉽게 알려주도록 했다.
 
-# System structure
+# System Structure
 
 ![image01](https://user-images.githubusercontent.com/79498819/187089936-ba228c58-8ce3-4b16-90d5-0c24486f8db9.png)
 
 
-# Service flow
+# Service Flow
 
  ![image02](https://user-images.githubusercontent.com/79498819/187089950-e65cf190-7c8c-419e-b19c-5fd9fa26903a.png)
 
@@ -74,11 +74,11 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 ![image03](https://user-images.githubusercontent.com/79498819/187089977-b11bf678-b958-42c0-b732-a9dd111652b6.png)
 
-# Project flow
+# Project Flow
 
 ![image04](https://user-images.githubusercontent.com/79498819/187089985-d92a5ede-9499-4953-8d5c-bec32b1c17cc.png)
 
-# Deep learning
+# Deep Learning
 
 ## Data Collection and Labeling
 
@@ -122,7 +122,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 
  이 과정에서 ‘AWS EC2’에서 무료로 사용할 수 있는 인스턴스 유형의 CPU(1GB)/메모리(RAM 1GB) 한계와 우리가 제작한 모델의 용량 문제로 인해 서버에 과부하가 일어나는 문제가 발생하였고, 이를 해결하기 위하여 ‘AWS EC2’의 하드디스크의 일부 용량을 swap memory로 할당하였다. 이 과정을 통해 메모리에 여유를 주고, 서버의 부담이 줄어들면서 서버가 안정화되는 효과를 얻을 수 있었다.
 
-# expectation effectiveness
+# Expected Effects
 
  먼저 농업에 대한 이미지를 개선할 수 있다. 전문적인 관리 지식이 요구된다는 인식을 개선하여 농업에 대한 접근성을 향상할 수 있다. 
 
