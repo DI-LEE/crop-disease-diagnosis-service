@@ -41,7 +41,6 @@ crop disease diagnosis service application with image-captioning and object-dete
 ## Train environment
 
 * `RTX 2070`
-
 * `CUDA Version==11.2`
 * `cuddn==7.6.5`
 
@@ -72,7 +71,15 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 # Disease diagnostic results
 
+## result screen
+
 ![image03](https://user-images.githubusercontent.com/79498819/187089977-b11bf678-b958-42c0-b732-a9dd111652b6.png)
+
+## result video
+
+
+https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-9100-8bad7cbd4986.mp4
+
 
 # Project Flow
 
@@ -138,5 +145,4 @@ Xu et al. "Show, attend and tell: Neural image caption generation with visual at
 Li et al. “Entangled Transformer for Image Captioning”, *Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)*, 2019.
 
 
-Taraneh et al. “Deep Learning Approaches on Image Captioning: A Review”, *arXiv preprint arXiv:2201.12944*, 2022.
-
+Taraneh et al. “Deep Learning Approaches on Image Captioning: A Review”, *arXiv preprint arXiv:2201.12944*, 2022.****
