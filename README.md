@@ -35,7 +35,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 * `python==3.9`
 * `tensorflow==2.8.0`
 * `torch==1.12.1`
-* `lutter==3.0.5 `
+* `flutter==3.0.5 `
 * `flask==2.2.2`
 
 ## Train environment
