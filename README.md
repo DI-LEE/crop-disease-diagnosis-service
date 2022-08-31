@@ -32,15 +32,77 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 # Requirements
 
-## Image-Captioning Requirements for train
+### Image-Captioning Requirements for train
+
+```
+cd requirements
+pip install -r img_cpt_requirements.txt  # install
+```
+
+#### key requirements
 
 * `python==3.9`
 * `tensorflow-gpu==2.8.0`
+
+### Object-detection Requirements for train
+
+```
+cd requirements
+pip install -r ob_requirements.txt  # install
+```
+
+#### key requirements
+
 * `torch==1.12.1`
+
+### APP
+
+#### frontend Requirements
+
+```
+cd app_front
+flutter pub get  # install
+```
+
+#### backend Requirements
+
+```
+cd requirements
+pip install -r backend_requirements.txt  # install
+```
+
+#### key requirements
+
 * `flutter==3.0.5 `
 * `flask==2.2.2`
 
-## Object-detection Requirements for train
+## APP frontend environment for build
+
+* `flutter==3.0.5`
+  * https://docs.flutter.dev/get-started/install/windows
+
+* `Android Studio (version 2021.2)`
+
+  * https://developer.android.com/studio?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LJMRjRYK3GoWMjxbVMacicwuMD_e8fC7eFfgLeR94UWBFInFOO5PWQaAhn0EALw_wcB&gclsrc=aw.ds
+  * Android SDK Platform
+    * `Android API 33`
+
+  * Android SDK Tools
+
+    *  `Android SDK Build-Tools 33`
+    *  `Android SDK Command-line Tools`
+
+  * Android Emulator spec
+
+    * Pixel XL
+    * RAM : 5000
+    * VM heap : 1000
+    * Internel Storage : 5000
+
+  * Additional setting (build 시 sound null 오류 해결)
+
+    * terminal 에서 build : 옵션 `--no-sound-null-safety` 추가
+* GUI 에서 build : Android Studio -> Run -> Edit Configurations -> Additional run args -> `--no-sound-null-safety` -> apply
 
 ## Train environment
 
@@ -48,20 +110,12 @@ crop disease diagnosis service application with image-captioning and object-dete
 * `CUDA Version==11.2`
 * `cuddn==7.6.5`
 
-## APP
-
-```
-
-```
-
-
-
 # Keywords
 
 * Image-captioning
 * Object-detection
 * Natural Language Generation
-* diagnosis of crop disease
+* Diagnosis of crop disease
 * Home farming
 
 # Motivation & Purpose
@@ -109,9 +163,9 @@ https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-
 
 - 이미지의 메타데이터는 json 형태로 저장되어있음
 - 메타데이터중 ‘학습용 정보(annotations)’ 를 참고함
-  - **질병/해충 코드(disease)**로 질병의 종류를 파악
-  - **작물코드(crop)**로 작물의 종류를 파악
-  - **질병 피해 정도(risk)**로 질병의 피해 정도를 파악
+  - 질병/해충 코드(disease)로 질병의 종류를 파악
+  - 작물코드(crop)로 작물의 종류를 파악
+  - 질병 피해 정도(risk)로 질병의 피해 정도를 파악
 - json 파일의 annotations 부분이 이미지의 제목에 반영되어 있음을 확인
 
 **<이미지>**
@@ -135,11 +189,11 @@ https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-
 
 #### 3. 위의 두 데이터를 활용하여 작물의 질병을 진단하는 캡션 생성
 
-##### 1) 질병 피해 정도를 측정
+#### 1) 질병 피해 정도를 측정
 
 - **초기, 중기, 말기**로 나눠 라벨링 진행
 
-##### 2) 질병 피해 정도에 따른 키워드 할당
+#### 2) 질병 피해 정도에 따른 키워드 할당
 
 - 질병 피해 정도에 따라 적용되는 키워드의 종류 및 개수가 서로 다름
   - Ex) 고추탄저병 
@@ -147,7 +201,7 @@ https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-
     - 중기: 원형 반점 + 황갈색(담황색)의 포자 
     - 말기: 원형 반점 + 황갈색(담황색)의 포자 + 말라비틀어짐
 
-##### 3) 키워드를 활용한 캡션 문장 생성
+#### 3) 키워드를 활용한 캡션 문장 생성
 
 - **작물 종류, 질병 종류, 질병 피해정도,** 그리고 **키워드**를 활용하여 **캡션 문장 생성**
   - Ex) 고추탄저병 
