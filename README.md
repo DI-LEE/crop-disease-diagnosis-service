@@ -2,6 +2,31 @@
 
 crop disease diagnosis service application with image-captioning and object-detection(deep learning)
 
+# Contents
+1. [Team](#team)
+ - [Team Organization](#team-organization)
+2. [Requirement](#requirements)
+ - [APP frontend environment for build](#app-frontend-environment-for-build)
+ - [Train Enviornment](#train-enviornment)
+3. [Keywords](#keyword)
+4. [Motivation & Purpose](#motivation--purpose)
+5. [Goals](#goals)
+6. [System Structure](#system-structure)
+7. [Service Flow](#service-flow)
+8. [Disease Diagnostic Results](#disease-diagnostic-results)
+	- [Result Screen](#result-screen)
+	- [Result Video](#result-video)
+9. [Project Flow](#project-flow)
+10. [Deep Learning](#deep-learning)
+	- [Data Collection and Labeling](#data-collection-and-labeling)
+	- [Modeling](#modeling)
+11. [App](#app)
+	- [Frontend](#frontend)
+	- [Backend & Server](#backend--server)
+12. [Benefits](benefits)
+13. [References](#references)
+
+
 ## :seedling:내 손안의 식물의사: 닥터 쑥쑥
 
 > **딥러닝 기반 이미지 캡셔닝과 객체 인식을 이용한 작물 질병 진단 서비스**
