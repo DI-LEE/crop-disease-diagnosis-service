@@ -1,0 +1,11 @@
+python==3.9.13
+tensorflow==2.8.0
+matplotlib==3.5.3
+numpy==1.23.2
+opencv-python==4.6.0.66
+Pillow==9.2.0
+PyYAML==6.0
+requests==2.28.1
+scipy==1.9.1
+torch==1.12.1
+jsonpickle==2.2.0
