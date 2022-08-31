@@ -59,7 +59,7 @@ class Bacillus extends StatelessWidget {
                   height: 60,
                 ),
                 Container(
-                  height: 1000,
+                  height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -80,20 +80,6 @@ class Bacillus extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Container(
-                //   height: 100,
-                //   width: 350,
-                //   child: Column(
-                //     children: [
-                //       Text(
-                //         '- 고추와 오크라, 토마토, 가지, 오이 등이 병 발생 기주로 알려져 있습니다.',
-                //         style: TextStyle(
-                //           color: Colors.black87
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
               ],
             ),
             Column(

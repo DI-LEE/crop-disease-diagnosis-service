@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'dart:core';
 
 class Network{
+  //날씨 json data 받아오기
   final String url;
-  final String url2;
-  Network(this.url, this.url2);
+  Network(this.url);
 
   Future<dynamic> getJsonData() async {
     http.Response response = await http.get(Uri.parse(url));
@@ -16,12 +16,12 @@ class Network{
     }
   }
 
-  Future<dynamic> getAirData() async {
-    http.Response response = await http.get(Uri.parse(url2));
-    if (response.statusCode == 200) {
-      String jsonData = response.body;
-      var parsingData = jsonDecode(jsonData);
-      return parsingData;
-    }
-  }
+  // Future<dynamic> getAirData() async {
+  //   http.Response response = await http.get(Uri.parse(url2));
+  //   if (response.statusCode == 200) {
+  //     String jsonData = response.body;
+  //     var parsingData = jsonDecode(jsonData);
+  //     return parsingData;
+  //   }
+  // }
 }

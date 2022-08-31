@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:install_test/Screen/weather_screen.dart';
-import 'package:install_test/data/my_location.dart';
-import 'package:install_test/data/network.dart';
+
+import '../data/my_location.dart';
+import '../data/network.dart';
+import 'weather_screen.dart';
+
+
 const apiKey = '0d0cc1131b44cd6ea0027e60e69dc007';
 
 class Loading extends StatefulWidget {
@@ -26,39 +29,17 @@ class _LoadingState extends State<Loading> {
     await myLocation.getMyCurrentLocation();
     latitude3 = myLocation.latitude2;
     longitude3 = myLocation.longitude2;
-    print(latitude3);
-    print(longitude3);
-
     Network network = Network('https://api.openweathermap.org/data/2.5/weather'
-        '?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric',
-        'https://api.openweathermap.org/data/2.5/air_pollution?lat=$latitude3&lon=$longitude3&appid=$apiKey');
+        '?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric');
 
     var weatherData = await network.getJsonData();
-    print(weatherData);
 
-    var airData = await network.getAirData();
-    print(airData);
-
+    // var airData = await network.getAirData();
+    // ,parseAirPollution: airData,
     Navigator.push(context, MaterialPageRoute(builder: (context){
-      return WeatherScreen(parseWeatherData: weatherData,parseAirPollution: airData,);
+      return WeatherScreen(parseWeatherData: weatherData);
     }));
   }
-
-  // void fetchData() async{
-  //
-  //     var myJson = parsingData['weather'][0]['description'];
-  //     print(myJson);
-  //
-  //     var wind = parsingData['wind']['speed'];
-  //     print(wind);
-  //
-  //     var id =parsingData['id'];
-  //     print(id);
-  //   }else{
-  //     print(response.statusCode);
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +55,7 @@ class _LoadingState extends State<Loading> {
                 height: double.infinity,
                 width: double.infinity,
               ),
+              //배경 텍스트
               Container(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(20,0,0,0),
@@ -93,7 +75,7 @@ class _LoadingState extends State<Loading> {
                         ),
                       ),
                       Text(
-                        '병해중 진단 서비스.',
+                        '병해충 진단 서비스.',
                         style: TextStyle(
                           fontSize: 40,
                           color: Colors.white,
@@ -122,19 +104,5 @@ class _LoadingState extends State<Loading> {
         ),
       ),
     );
-    // return Scaffold(
-    //   body: Center(
-    //     child: RaisedButton(
-    //       onPressed: null,
-    //       child: Text(
-    //         'Get my location',
-    //         style: TextStyle(
-    //             color: Colors.white
-    //         ),
-    //       ),
-    //       color: Colors.blue,
-    //     ),
-    //   ),
-    // );
   }
 }

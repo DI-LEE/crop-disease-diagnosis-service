@@ -40,8 +40,11 @@ dependencies:
   flutter_svg: ^0.21.0
   intl: ^0.17.0
   timer_builder: ^2.0.0
-  image_picker: ^0.6.1
+  image_picker: ^0.8.4+4
   dio:
+  animated_splash_screen: ^1.3.0
+  lottie: ^1.4.2
+
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +73,6 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/images/backgroundcolor.jpg
-    - assets/images/good.png
     - assets/images/paper.png
     - assets/images/greenbackground2.jpg
     - assets/images/paper.png
@@ -81,6 +83,18 @@ flutter:
     - assets/images/leafspot.png
     - assets/images/white.png
     - assets/images/greenbackground.jpg
+    - assets/animation/1.json
+    - assets/animation/2.json
+    - assets/animation/3.json
+    - assets/animation/4.json
+    - assets/svg/climacon-cloud_lightning.svg
+    - assets/svg/climacon-cloud_rain.svg
+    - assets/svg/climacon-cloud_sun.svg
+    - assets/svg/climacon-cloud_moon.svg
+    - assets/svg/climacon-cloud_snow_alt.svg
+    - assets/svg/climacon-sun.svg
+    - assets/svg/climacon-sun_fill.svg
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
