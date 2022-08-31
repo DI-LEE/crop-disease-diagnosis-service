@@ -2,11 +2,16 @@
 
 crop disease diagnosis service application with image-captioning and object-detection(deep learning)
 
-
-
 ## :seedling:내 손안의 식물의사: 닥터 쑥쑥
 
 > **딥러닝 기반 이미지 캡셔닝과 객체 인식을 이용한 작물 질병 진단 서비스**
+
+# Getting Start
+
+1. apk download : https://github.com/DI-LEE/crop-disease-diagnosis-service/releases
+2. 설정 -> 생체 인식 및 보안 -> 출처를 알 수 없는 앱 설치 -> 내 파일 선택 후 허용 -> 내 파일 -> apk 선택 후 `Dr.쑥쑥 `앱 설치
+
+> For detail instructions :  [Service Flow](#service-flow)
 
 # Team
 
@@ -38,6 +43,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 cd requirements
 pip install -r img_cpt_requirements.txt  # install
 ```
+
 #### key requirements
 
 * `python==3.9`
@@ -49,23 +55,27 @@ pip install -r img_cpt_requirements.txt  # install
 cd requirements
 pip install -r ob_requirements.txt  # install
 ```
+
 #### key requirements
 
 * `torch==1.12.1`
 
 ### APP
+
 #### frontend Requirements
 
 ```
 cd app_front
 flutter pub get  # install
 ```
+
 #### backend Requirements
 
 ```
 cd requirements
 pip install -r backend_requirements.txt  # install
 ```
+
 #### key requirements
 
 * `flutter==3.0.5 `
