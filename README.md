@@ -38,7 +38,6 @@ crop disease diagnosis service application with image-captioning and object-dete
 cd requirements
 pip install -r img_cpt_requirements.txt  # install
 ```
-
 #### key requirements
 
 * `python==3.9`
@@ -50,27 +49,23 @@ pip install -r img_cpt_requirements.txt  # install
 cd requirements
 pip install -r ob_requirements.txt  # install
 ```
-
 #### key requirements
 
 * `torch==1.12.1`
 
 ### APP
-
 #### frontend Requirements
 
 ```
 cd app_front
 flutter pub get  # install
 ```
-
 #### backend Requirements
 
 ```
 cd requirements
 pip install -r backend_requirements.txt  # install
 ```
-
 #### key requirements
 
 * `flutter==3.0.5 `
