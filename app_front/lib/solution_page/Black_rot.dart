@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:install_test/Screen/Loading.dart';
+
+import '../Screen/Loading.dart';
 
 class BlackRot extends StatelessWidget {
   const BlackRot({Key? key}) : super(key: key);

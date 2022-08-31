@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:install_test/Screen/Loading.dart';
+
+import '../Screen/Loading.dart';
 
 class LeafBlight extends StatelessWidget {
   const LeafBlight({Key? key}) : super(key: key);

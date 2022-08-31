@@ -15,13 +15,4 @@ class Network{
       return parsingData;
     }
   }
-
-  // Future<dynamic> getAirData() async {
-  //   http.Response response = await http.get(Uri.parse(url2));
-  //   if (response.statusCode == 200) {
-  //     String jsonData = response.body;
-  //     var parsingData = jsonDecode(jsonData);
-  //     return parsingData;
-  //   }
-  // }
 }
