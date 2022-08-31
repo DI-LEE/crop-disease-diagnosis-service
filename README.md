@@ -219,6 +219,15 @@ https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-
   - 텍스트 역번역(Back Translation)
     - 네이버 '파파고' 기계번역기를 활용하여 문장을 외국어로 번역한 후 다시 한국어로 번역
     - '한국어→영어→일본어→한국어' 순서로 번역하여 기존의 문장과는 다른 형태의 새로운 문장을 생성
+    
+### 오브젝트 디텍션(Object Detection) 라벨링 기준
+
+이미지 캡셔닝과 마찬가지로 AI-hub에 수록되어 있는 메타데이터의 '학습용 정보(annotations)'를 활용하여 작물의 이름과 질병의 종류를 파악한 후 bounding box 처리를 해주었다. 이 때 bounding box는 전체 작물 중 병변이 발생한 특정 부분에 표시를 해주었으며, 질병이 작물 전체적으로 퍼져있는 경우 부분이 아닌 작물 전체에 bounding box처리를 해주었다.
+
+![187653219-083cef9d-f4db-4e69-9a1b-755228aa0d75](https://user-images.githubusercontent.com/79498819/187656858-02e6f21e-9345-46a1-8691-2de734f9e02d.jpg)
+
+![187653281-6f922bc7-37f8-46f6-9f29-ef55051d61d4](https://user-images.githubusercontent.com/79498819/187656880-ca9f5f53-8d94-4b99-bbc1-5b677a266114.jpg)
+
 
 ## Modeling
 
