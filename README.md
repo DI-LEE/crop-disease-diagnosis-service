@@ -56,7 +56,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 | **이동인** | 팀장, 이미지캡셔닝 모델 구축 및 이식, 백엔드 서버 구축 보조, 시스템 구조 설계 |  dongeen1@gmail.com  |
 |   장승호   | 오브젝트 디텍션 모델 구축 및 데이터 증강, 앱 서비스 플로우 제작 | jason9865@naver.com  |
 |   이지환   | 이미지 캡셔닝 모델 구축 및 모델 성능 비교연구, 앱 서비스 플로우 제작 |  ywl9845@naver.com   |
-|   류승기   | 벡엔드 로직 설계 및 구축, 프론트엔드 벡엔드 간 통신 및 연결, 서버 구축 및 모델 이식 | ysg980423@gmail.com  |
+|   류승기   | 백엔드 로직 설계 및 구축, 프론트엔드 백엔드 간 통신 및 연결, 서버 구축 및 모델 이식 | ysg980423@gmail.com  |
 |   정훈서   | 오브젝트 디텍션 모델 구축 및 이식, 백엔드 서버 구축 보조, 시스템 구조 설계 | joel39809@gmail.com  |
 |   오지환   |              데이터 수집 및 분석, 기획 및 발표               |  kmm8777@naver.com   |
 |   양건안   | 프론트엔드 로직 설계 및 구축, 프론트엔드 백엔드 간 통신 및 연결, UX/UI 디자인 | moho191113@gmail.com |
@@ -191,18 +191,31 @@ https://user-images.githubusercontent.com/79498819/187265541-43766edb-f1fb-462d-
 
 ## Dataset
 
-### 이미지 캡셔닝(Image Captioning) 데이터셋
+### 이미지 캡셔닝(Image Captioning) 데이터셋 및 모델 weight
 
-Download : https://drive.google.com/drive/folders/1nT2tOmWdmjItQA_5MNHqByVcMas0bzKp?usp=sharing
+Dataset and Weight Download : https://drive.google.com/drive/folders/1nT2tOmWdmjItQA_5MNHqByVcMas0bzKp?usp=sharing
 
 |        |  Train  | Validation |
 | :----: | :-----: | :--------: |
 | Images | 123,913 |    303     |
 | Label  | 619,565 |   1,515    |
 
-### 오브젝트 디텍션(Object Detection) 데이터셋
+### 오브젝트 디텍션(Object Detection) 데이터셋 및 모델 weight
 
-Download :https://drive.google.com/drive/folders/1NmlqqYI_ePEpUEhjWU2qUO5R1MMMHy-L?usp=sharing
+Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePEpUEhjWU2qUO5R1MMMHy-L?usp=sharing
+
+|  원천  | Train | Validation |
+| :----: | :---: | :--------: |
+| Images | 4,871 |   1,099    |
+
+|  증강  | Train  | Validation |
+| :----: | :----: | :--------: |
+| Images | 20,588 |   4,033    |
+
+| Total  |  Train  | Validation |
+| :----: | :-----: | :--------: |
+| Images | 25,459  |   5,132    |
+| Label  | 144,172 |   33,717   |
 
 ## Data Labeling
 
@@ -272,14 +285,26 @@ Download :https://drive.google.com/drive/folders/1NmlqqYI_ePEpUEhjWU2qUO5R1MMMHy
 
 ![187653281-6f922bc7-37f8-46f6-9f29-ef55051d61d4](https://user-images.githubusercontent.com/79498819/187656880-ca9f5f53-8d94-4b99-bbc1-5b677a266114.jpg)
 
-
 ## Modeling
+
+### Used Model
+
+* InceptionV3 + Transformer
+
+  * 훈련 파일 경로: image-captioning/image_captioning_InceptionV3_Transformer.ipynb
+
+
+* yoloV5m
 
 ### Image Captioning
 
- 이미지 캡셔닝(Image Captioning)은 이미지를 설명하는 문장을 생성하는 기술로, 이미지의 여러 가지 특징을 자세히 묘사한 문장을 생성한다. 프로젝트에 사용된 이미지 캡셔닝 모델은 자연어처리의 기계번역 매커니즘 중 하나인 ‘인코더-디코더 형식’을 사용한다. 인코더에서 이미지의 특징을 추출하고 디코더에서는 인코더에서 추출된 특징을 바탕으로 캡션 문장을 생성한다. 우리의 이미지 캡셔닝 모델의 인코더에는 이미지 처리에 자주 사용되는 CNN 모델을 사용하는데 그중 ‘ImageNet’이라는 이미지 데이터로 사전학습을 거친 InceptionV3 모델을 사용하여 이미지에서 특징을 추출한다. 그리고 디코더에는 자연어를 생성해내는 Language Model(언어 모델)을 사용하는데 그중 RNN 모델을 사용하지 않고도 여러 번의 ‘Self-Attention’ 방식으로 문장 생성 성능을 획기적으로 향상시킨 ‘Transformer’ 모델을 사용했다. 
+이미지 캡셔닝(Image Captioning)은 이미지를 설명하는 문장을 생성하는 기술로, 이미지의 여러 가지 특징을 자세히 묘사한 문장을 생성한다. 프로젝트에 사용된 이미지 캡셔닝 모델은 자연어처리의 기계번역 매커니즘 중 하나인 ‘인코더-디코더 형식’을 사용한다. 인코더에서 이미지의 특징을 추출하고 디코더에서는 인코더에서 추출된 특징을 바탕으로 캡션 문장을 생성한다. 우리의 이미지 캡셔닝 모델의 인코더에는 이미지 처리에 자주 사용되는 CNN 모델을 사용하는데 그중 ‘ImageNet’이라는 이미지 데이터로 사전학습을 거친 InceptionV3 모델을 사용했다. 그리고 디코더에는 자연어를 생성해내는 언어 모델(Language Model)을 사용하는데 대표적인 언어 모델로 ‘Attention’모델과 ‘Transformer’ 모델이 있다. Attention 모델은 문장 구성 요소 중 특정 단어에 집중하도록 하는 알고리즘이 추가된 RNN 계열의 문장 생성 모델이며 Transformer 모델은 Attention 모델을 보완한 것으로, RNN 모델을 사용하지 않고도 여러 번의 ‘Self-Attention’ 방식으로 문장 생성 성능과 속도를 획기적으로 향상시킨 모델이다. 본 프로젝트의 이미지 캡셔닝 모델 디코더에 두 모델 중 문장 생성 성능이 더 높은 모델을 사용하기 위해 **’BLEU 스코어’**를 이용하여 두 모델의 문장 생성 성능을 비교했다. 
 
-  이미지가 CNN계열의 InceptionV3 에 입력되면 모델은 이미지에서 여러 특징을 분석한다. 가령 잎의 가장자리에 노란 점박이가 생긴 모습, 잎의 색상 등을 분석하게 된다. 분석된 특징은 Transformer 모델에 입력된다. Transformer 모델도 인코더-디코더 구조를 지니는데, 우선 이미지의 특징은 각 특징의 위치 정보와 함께 Transformer의 인코더에 입력되어 Self-Attention 과정을 거쳐 분석된 뒤 Transformer의 디코더에 입력된다. 또한 Transformer의 디코더에는 해당 이미지에 대한 정답 레이블, 즉, 실제 캡션 문장도 함께 입력되는데 이때 Transformer의 인코더에서 분석된 이미지 특징과 디코더에 입력된 실제 캡션 문장을 Self-Attention 과정으로 종합적으로 분석하여 최종적으로 Transformer 디코더에서 해당 이미지에 대해 모델이 예측한 캡션 문장이 생성된다.
+  BLEU 스코어는 인간이 생성한 문장과 모델이 생성한 문장의 유사성을 수학적으로 계산하여 점수로 나타내는 대표적인 문장 생성 성능 지표로 기계번역 등에서 자주 이용된다. 문장 생성 성능이 좋을수록 높은 점수가 산출된다. 각 문장의 구성요소를 토큰으로 나누고 토큰을 비교하여 두 문장이 서로 공유하는 토큰의 개수 등을 수학적으로 계산하여 점수를 환산하는데, 토큰을 비교할 때 n-gram 기법을 적용하여 토큰 쌍을 비교할 수 있고 각 n-gram을 적용한 BLEU 스코어는 ‘BLEU_N’으로 표현된다. 본 프로젝트에서는 1-gram, 2-gram, 3-gram, 4-gram이 각각 적용된 **BLEU_1, BLEU_2, BLEU_3, BLEU_4,** 그리고 이 네가지 BLEU 스코어의 평균값인 **BLEU_AVG**를 이용하여 두 모델의 문장 생성 성능을 비교했다. Validation 데이터 셋을 이용하여 BLEU 스코어를 산출한 결과, BLEU_3을 제외한 나머지 BLEU 스코어에 대해 Transformer 모델의 BLEU 스코어가 더 높았다. 즉, Attention 모델보다 Transformer 모델의 문장 생성 성능이 더 좋았기 때문에 본 프로젝트의 이미지 캡셔닝 모델 디코더에는 Transformer 모델을 사용했다.
+
+<여기에 블루스코어 비교한 이미지 삽입>
+
+  본 프로젝트에서 사용한 이미지 캡셔닝 모델의 구조는 다음과 같다. 먼저 이미지가 CNN계열의 InceptionV3 에 입력되면 모델은 이미지에서 여러 특징을 분석한다. 가령 노균병에 감염된 애호박 잎사귀 이미지가 입력되면 모델은 잎의 가장자리에 노란 점박이가 생긴 모습, 잎의 색상 등을 분석하게 된다. 분석된 특징은 Transformer 모델에 입력된다. Transformer 모델 자체도 인코더-디코더 구조를 지니는데, 우선 이미지의 특징은 각 특징의 위치 정보와 함께 Transformer의 인코더에 입력되어 Self-Attention 과정을 거쳐 분석된 뒤 Transformer의 디코더에 입력된다. 또한 Transformer의 디코더에는 해당 이미지에 대한 정답 라벨인 실제 캡션 문장도 함께 입력되는데 이때 Transformer의 인코더에서 분석된 이미지 특징과 디코더에 입력된 실제 캡션 문장이 Self-Attention 과정으로 종합적으로 분석되고 최종적으로 Transformer 디코더에서 해당 이미지에 대해 모델이 예측한 캡션 문장이 생성된다.
 
 ### Object Detection
 
