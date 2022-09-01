@@ -4,10 +4,10 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 # Contents
 1. [Team](#team)
- - [Team Organization](#team-organization)
+ 	- [Team Organization](#team-organization)
 2. [Requirement](#requirements)
- - [APP frontend environment for build](#app-frontend-environment-for-build)
- - [Train Enviornment](#train-enviornment)
+ 	- [APP frontend environment for build](#app-frontend-environment-for-build)
+	- [Train Enviornment](#train-enviornment)
 3. [Keywords](#keyword)
 4. [Motivation & Purpose](#motivation--purpose)
 5. [Goals](#goals)
