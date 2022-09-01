@@ -7,8 +7,8 @@ crop disease diagnosis service application with image-captioning and object-dete
  	- [Team Organization](#team-organization)
 2. [Requirement](#requirements)
  	- [APP frontend environment for build](#app-frontend-environment-for-build)
-	- [Train Enviornment](#train-enviornment)
-3. [Keywords](#keyword)
+	- [Train Enviornment](#train-environment)
+3. [Keywords](#keywords)
 4. [Motivation & Purpose](#motivation--purpose)
 5. [Goals](#goals)
 6. [System Structure](#system-structure)
@@ -23,7 +23,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 11. [App](#app)
 	- [Frontend](#frontend)
 	- [Backend & Server](#backend--server)
-12. [Benefits](benefits)
+12. [Benefits](#benefits)
 13. [References](#references)
 
 
@@ -54,7 +54,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 | **이동인** | 팀장, 이미지캡셔닝 모델 구축 및 이식, 백엔드 서버 구축 보조, 시스템 구조 설계 | dongeen1@gmail.com   |
 | 장승호     | 오브젝트 디텍션 모델 구축 및 데이터 증강, 앱 서비스 플로우 제작 | jason9865@naver.com  |
 | 이지환     | 이미지 캡셔닝 모델 구축 및 모델 성능 비교연구, 앱 서비스 플로우 제작 | ywl9845@naver.com    |
-| 류승기     | 벡엔드 로직 설계 및 구축, 프론트엔드 벡엔드 간 통신 및 연결, 서버 구축 및 모델 이식 | ysg980423@gmail.com  |
+| 류승기     | 백엔드 로직 설계 및 구축, 프론트엔드 벡엔드 간 통신 및 연결, 서버 구축 및 모델 이식 | ysg980423@gmail.com  |
 | 정훈서     | 오브젝트 디텍션 모델 구축 및 이식, 백엔드 서버 구축 보조, 시스템 구조 설계 | joel39809@gmail.com  |
 | 오지환     | 데이터 수집 및 분석, 기획 및 발표                            | kmm8777@naver.com    |
 | 양건안     | 프론트엔드 로직 설계 및 구축, 프론트엔드 백엔드 간 통신 및 연결, UX/UI 디자인 | moho191113@gmail.com |
