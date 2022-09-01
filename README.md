@@ -4,28 +4,26 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 # Contents
 1. [Team](#team)
-
- 	- [Team Organization](#team-organization)
+    - [Team Organization](#team-organization)
 2. [Requirement](#requirements)
-
- 	- [APP frontend environment for build](#app-frontend-environment-for-build)
- 	- [Train Enviornment](#train-enviornment)
-3. [Keywords](#keyword)
+    - [APP frontend environment for build](#app-frontend-environment-for-build)
+    - [Train Enviornment](#train-environment)
+3. [Keywords](#keywords)
 4. [Motivation & Purpose](#motivation--purpose)
 5. [Goals](#goals)
 6. [System Structure](#system-structure)
 7. [Service Flow](#service-flow)
 8. [Disease Diagnostic Results](#disease-diagnostic-results)
-	- [Result Screen](#result-screen)
-	- [Result Video](#result-video)
+   - [Result Screen](#result-screen)
+   - [Result Video](#result-video)
 9. [Project Flow](#project-flow)
 10. [Deep Learning](#deep-learning)
-	- [Data Collection and Labeling](#data-collection-and-labeling)
-	- [Modeling](#modeling)
+   - [Data Collection and Labeling](#data-collection-and-labeling)
+   - [Modeling](#modeling)
 11. [App](#app)
-	- [Frontend](#frontend)
-	- [Backend & Server](#backend--server)
-12. [Benefits](benefits)
+   - [Frontend](#frontend)
+   - [Backend & Server](#backend--server)
+12. [Benefits](#benefits)
 13. [References](#references)
 
 
@@ -302,7 +300,8 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 
   BLEU 스코어는 인간이 생성한 문장과 모델이 생성한 문장의 유사성을 수학적으로 계산하여 점수로 나타내는 대표적인 문장 생성 성능 지표로 기계번역 등에서 자주 이용된다. 문장 생성 성능이 좋을수록 높은 점수가 산출된다. 각 문장의 구성요소를 토큰으로 나누고 토큰을 비교하여 두 문장이 서로 공유하는 토큰의 개수 등을 수학적으로 계산하여 점수를 환산하는데, 토큰을 비교할 때 n-gram 기법을 적용하여 토큰 쌍을 비교할 수 있고 각 n-gram을 적용한 BLEU 스코어는 ‘BLEU_N’으로 표현된다. 본 프로젝트에서는 1-gram, 2-gram, 3-gram, 4-gram이 각각 적용된 **BLEU_1, BLEU_2, BLEU_3, BLEU_4,** 그리고 이 네가지 BLEU 스코어의 평균값인 **BLEU_AVG**를 이용하여 두 모델의 문장 생성 성능을 비교했다. Validation 데이터 셋을 이용하여 BLEU 스코어를 산출한 결과, BLEU_3을 제외한 나머지 BLEU 스코어에 대해 Transformer 모델의 BLEU 스코어가 더 높았다. 즉, Attention 모델보다 Transformer 모델의 문장 생성 성능이 더 좋았기 때문에 본 프로젝트의 이미지 캡셔닝 모델 디코더에는 Transformer 모델을 사용했다.
 
-<여기에 블루스코어 비교한 이미지 삽입>
+![blue-score](https://user-images.githubusercontent.com/79498819/187978756-d9670b48-4f03-432f-8419-d0ec479c763e.png)
+
 
   본 프로젝트에서 사용한 이미지 캡셔닝 모델의 구조는 다음과 같다. 먼저 이미지가 CNN계열의 InceptionV3 에 입력되면 모델은 이미지에서 여러 특징을 분석한다. 가령 노균병에 감염된 애호박 잎사귀 이미지가 입력되면 모델은 잎의 가장자리에 노란 점박이가 생긴 모습, 잎의 색상 등을 분석하게 된다. 분석된 특징은 Transformer 모델에 입력된다. Transformer 모델 자체도 인코더-디코더 구조를 지니는데, 우선 이미지의 특징은 각 특징의 위치 정보와 함께 Transformer의 인코더에 입력되어 Self-Attention 과정을 거쳐 분석된 뒤 Transformer의 디코더에 입력된다. 또한 Transformer의 디코더에는 해당 이미지에 대한 정답 라벨인 실제 캡션 문장도 함께 입력되는데 이때 Transformer의 인코더에서 분석된 이미지 특징과 디코더에 입력된 실제 캡션 문장이 Self-Attention 과정으로 종합적으로 분석되고 최종적으로 Transformer 디코더에서 해당 이미지에 대해 모델이 예측한 캡션 문장이 생성된다.
 
