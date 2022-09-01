@@ -317,6 +317,8 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 
   이후 Yolov5 사전 모델을 다운로드하여 학습을 진행하였다. Yolov5에서 제공하는 사전 훈련 모델은 Yolov5n, Yolov5s, Yolov5m, Yolov5l, Yolov5x 총 5개이다. n에서 x로 갈수록 모델의 성능은 좋아지지만, 학습시키는데 더 많은 시간이 소요된다. 우리 조는 학습의 성능과 학습 시간을 적절히 고려하여 Yolov5m모델을 채택하여 학습을 시켰고 15시간에 걸친 끝에 모델 구축에 성공했다.
 
+![confusion_matrix](https://user-images.githubusercontent.com/79498819/187980032-29b59f3a-f73b-485f-ae3e-2747037a042f.png)
+
 # APP
 
  앱 프론트엔드 개발에는 구글에서 제공하는 Dart 언어기반의 무료 프레임워크인 ‘flutter’을 사용했으며 백엔드 개발에는 python 언어 기반 웹 프레임워크인 ‘flask’를 사용했다. 서버는 안정적이고 탄력성있는 성능으로 유명한 ‘AWS EC2’를 사용했으며 앱 UX/UI 디자인과 앱 서비스 플로우는 협업 디자인 툴인 ‘Figma’를 사용했다.
