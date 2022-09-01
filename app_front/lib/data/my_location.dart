@@ -1,6 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 
 class MyLocation{
+  //내 위도 경도 받아오기
   double? latitude2;
   double? longitude2;
 
@@ -10,8 +11,6 @@ class MyLocation{
       getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
       latitude2 = position.latitude;
       longitude2 = position.longitude;
-      print(latitude2);
-      print(longitude2);
     }catch(e){
       print('There was a problem with the internet connection.');
     }

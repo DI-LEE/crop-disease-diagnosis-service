@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:install_test/Screen/Loading.dart';
+
+import '../Screen/Loading.dart';
 
 class BlackRot extends StatelessWidget {
   const BlackRot({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class BlackRot extends StatelessWidget {
                   height: 60,
                 ),
                 Container(
-                  height: 1000,
+                  height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
