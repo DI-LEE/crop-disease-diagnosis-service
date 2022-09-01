@@ -18,11 +18,11 @@ crop disease diagnosis service application with image-captioning and object-dete
    - [Result Video](#result-video)
 9. [Project Flow](#project-flow)
 10. [Deep Learning](#deep-learning)
-   - [Data Collection and Labeling](#data-collection-and-labeling)
-   - [Modeling](#modeling)
+    - [Data Collection and Labeling](#data-collection-and-labeling)
+    - [Modeling](#modeling)
 11. [App](#app)
-   - [Frontend](#frontend)
-   - [Backend & Server](#backend--server)
+    - [Frontend](#frontend)
+    - [Backend & Server](#backend--server)
 12. [Benefits](#benefits)
 13. [References](#references)
 
@@ -317,6 +317,7 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 
   이후 Yolov5 사전 모델을 다운로드하여 학습을 진행하였다. Yolov5에서 제공하는 사전 훈련 모델은 Yolov5n, Yolov5s, Yolov5m, Yolov5l, Yolov5x 총 5개이다. n에서 x로 갈수록 모델의 성능은 좋아지지만, 학습시키는데 더 많은 시간이 소요된다. 우리 조는 학습의 성능과 학습 시간을 적절히 고려하여 Yolov5m모델을 채택하여 학습을 시켰고 15시간에 걸친 끝에 모델 구축에 성공했다.
 
+아래는 Yolov5 학습 결과의 Confusion atrix 이다.
 ![confusion_matrix](https://user-images.githubusercontent.com/79498819/187980032-29b59f3a-f73b-485f-ae3e-2747037a042f.png)
 
 # APP
