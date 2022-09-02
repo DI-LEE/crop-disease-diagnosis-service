@@ -48,7 +48,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 돋을볕
 
-![한국데이터산업진흥원외대로고리사이즈](https://user-images.githubusercontent.com/79498819/188060947-8f3ac0d2-a9ff-49c3-aad0-ec9668cd18cc.gif)
+![image](https://user-images.githubusercontent.com/79498819/188061141-5a6e6634-f267-4133-bce1-dd050f458956.png)
 
 ## Team Organization
 
