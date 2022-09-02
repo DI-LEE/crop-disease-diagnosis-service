@@ -31,7 +31,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 > **딥러닝 기반 이미지 캡셔닝과 객체 인식을 이용한 작물 질병 진단 서비스**
 
-- 한국데이터산업진흥원 [데이터청년캠퍼스](https://dataonair.or.kr/bigjob/) 한국외국어대학교 과정
+- [한국데이터산업진흥원](https://www.kdata.or.kr/) [데이터청년캠퍼스](https://dataonair.or.kr/bigjob/) 한국외국어대학교 과정
 
 ![진흥원로고](https://user-images.githubusercontent.com/79498819/188051744-ca189c70-7e93-4ef2-a30f-59929286b2e2.jpg)
 
