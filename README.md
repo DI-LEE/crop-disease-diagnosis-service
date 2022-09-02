@@ -7,7 +7,7 @@ crop disease diagnosis service application with image-captioning and object-dete
     - [Team Organization](#team-organization)
 2. [Requirement](#requirements)
     - [APP frontend environment for build](#app-frontend-environment-for-build)
-    - [Train Enviornment](#train-environment)
+    - [Train Environment](#train-environment)
 3. [Keywords](#keywords)
 4. [Motivation & Purpose](#motivation--purpose)
 5. [Goals](#goals)
@@ -211,11 +211,11 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 
 |  증강  | Train  | Validation |
 | :----: | :----: | :--------: |
-| Images | 20,588 |   4,033    |
+| Images | 20,587 |   4,837    |
 
 | Total  |  Train  | Validation |
 | :----: | :-----: | :--------: |
-| Images | 25,459  |   5,132    |
+| Images | 25,458  |   5,936    |
 | Label  | 144,172 |   33,717   |
 
 ## Data Labeling
@@ -248,7 +248,7 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 - ‘**[국가농작물병해충관리시스템](https://ncpms.rda.go.kr/npms/Main.np)**’ 홈페이지의 ‘병해충정보’→’병해충별 도감정보’ 이동
 - 질병을 검색하면 해당 질병에 걸릴 수 있는 작물의 종류와 해당 질병의 특징을 파악할 수 있음
 - '증상 설명' 부분에서 질병의 특징을 나타내는 키워드를 파악할 수 있음
-  - 가령, 고추 탄저병에서는 **'원형반점', '담황색 내지 황갈색의 포자덩어리', '말라 비틀어짐'**의 키워드를 파악할 수 있음
+  - 가령, 고추 탄저병에서는 **원형반점, 담황색 내지 황갈색의 포자덩어리, 말라 비틀어짐**의 키워드를 파악할 수 있음
 
 #### 3. 위의 두 데이터를 활용하여 작물의 질병을 진단하는 캡션 생성
 
@@ -299,9 +299,9 @@ Dataset and Weight Download :https://drive.google.com/drive/folders/1NmlqqYI_ePE
 
 ### Image Captioning
 
-이미지 캡셔닝(Image Captioning)은 이미지를 설명하는 문장을 생성하는 기술로, 이미지의 여러 가지 특징을 자세히 묘사한 문장을 생성한다. 프로젝트에 사용된 이미지 캡셔닝 모델은 자연어처리의 기계번역 매커니즘 중 하나인 ‘인코더-디코더 형식’을 사용한다. 인코더에서 이미지의 특징을 추출하고 디코더에서는 인코더에서 추출된 특징을 바탕으로 캡션 문장을 생성한다. 우리의 이미지 캡셔닝 모델의 인코더에는 이미지 처리에 자주 사용되는 CNN 모델을 사용하는데 그중 ‘ImageNet’이라는 이미지 데이터로 사전학습을 거친 InceptionV3 모델을 사용했다. 그리고 디코더에는 자연어를 생성해내는 언어 모델(Language Model)을 사용하는데 대표적인 언어 모델로 ‘Attention’모델과 ‘Transformer’ 모델이 있다. Attention 모델은 문장 구성 요소 중 특정 단어에 집중하도록 하는 알고리즘이 추가된 RNN 계열의 문장 생성 모델이며 Transformer 모델은 Attention 모델을 보완한 것으로, RNN 모델을 사용하지 않고도 여러 번의 ‘Self-Attention’ 방식으로 문장 생성 성능과 속도를 획기적으로 향상시킨 모델이다. 본 프로젝트의 이미지 캡셔닝 모델 디코더에 두 모델 중 문장 생성 성능이 더 높은 모델을 사용하기 위해 ** 'BLEU 스코어' **를 이용하여 두 모델의 문장 생성 성능을 비교했다. 
+이미지 캡셔닝(Image Captioning)은 이미지를 설명하는 문장을 생성하는 기술로, 이미지의 여러 가지 특징을 자세히 묘사한 문장을 생성한다. 프로젝트에 사용된 이미지 캡셔닝 모델은 자연어처리의 기계번역 매커니즘 중 하나인 ‘인코더-디코더 형식’을 사용한다. 인코더에서 이미지의 특징을 추출하고 디코더에서는 인코더에서 추출된 특징을 바탕으로 캡션 문장을 생성한다. 우리의 이미지 캡셔닝 모델의 인코더에는 이미지 처리에 자주 사용되는 CNN 모델을 사용하는데 그중 ‘ImageNet’이라는 이미지 데이터로 사전학습을 거친 InceptionV3 모델을 사용했다. 그리고 디코더에는 자연어를 생성해내는 언어 모델(Language Model)을 사용하는데 대표적인 언어 모델로 ‘Attention’모델과 ‘Transformer’ 모델이 있다. Attention 모델은 문장 구성 요소 중 특정 단어에 집중하도록 하는 알고리즘이 추가된 RNN 계열의 문장 생성 모델이며 Transformer 모델은 Attention 모델을 보완한 것으로, RNN 모델을 사용하지 않고도 여러 번의 ‘Self-Attention’ 방식으로 문장 생성 성능과 속도를 획기적으로 향상시킨 모델이다. 본 프로젝트의 이미지 캡셔닝 모델 디코더에 두 모델 중 문장 생성 성능이 더 높은 모델을 사용하기 위해 BLEU 스코어를 이용하여 두 모델의 문장 생성 성능을 비교했다. 
 
-  BLEU 스코어는 인간이 생성한 문장과 모델이 생성한 문장의 유사성을 수학적으로 계산하여 점수로 나타내는 대표적인 문장 생성 성능 지표로 기계번역 등에서 자주 이용된다. 문장 생성 성능이 좋을수록 높은 점수가 산출된다. 각 문장의 구성요소를 토큰으로 나누고 토큰을 비교하여 두 문장이 서로 공유하는 토큰의 개수 등을 수학적으로 계산하여 점수를 환산하는데, 토큰을 비교할 때 n-gram 기법을 적용하여 토큰 쌍을 비교할 수 있고 각 n-gram을 적용한 BLEU 스코어는 ‘BLEU_N’으로 표현된다. 본 프로젝트에서는 1-gram, 2-gram, 3-gram, 4-gram이 각각 적용된 **BLEU_1, BLEU_2, BLEU_3, BLEU_4,** 그리고 이 네가지 BLEU 스코어의 평균값인 **BLEU_AVG**를 이용하여 두 모델의 문장 생성 성능을 비교했다. Validation 데이터 셋을 이용하여 BLEU 스코어를 산출한 결과, BLEU_3을 제외한 나머지 BLEU 스코어에 대해 Transformer 모델의 BLEU 스코어가 더 높았다. 즉, Attention 모델보다 Transformer 모델의 문장 생성 성능이 더 좋았기 때문에 본 프로젝트의 이미지 캡셔닝 모델 디코더에는 Transformer 모델을 사용했다.
+  **BLEU 스코어**는 인간이 생성한 문장과 모델이 생성한 문장의 유사성을 수학적으로 계산하여 점수로 나타내는 대표적인 문장 생성 성능 지표로 기계번역 등에서 자주 이용된다. 문장 생성 성능이 좋을수록 높은 점수가 산출된다. 각 문장의 구성요소를 토큰으로 나누고 토큰을 비교하여 두 문장이 서로 공유하는 토큰의 개수 등을 수학적으로 계산하여 점수를 환산하는데, 토큰을 비교할 때 n-gram 기법을 적용하여 토큰 쌍을 비교할 수 있고 각 n-gram을 적용한 BLEU 스코어는 ‘BLEU_N’으로 표현된다. 본 프로젝트에서는 1-gram, 2-gram, 3-gram, 4-gram이 각각 적용된 **BLEU_1, BLEU_2, BLEU_3, BLEU_4,** 그리고 이 네가지 BLEU 스코어의 평균값인 **BLEU_AVG**를 이용하여 두 모델의 문장 생성 성능을 비교했다. Validation 데이터 셋을 이용하여 BLEU 스코어를 산출한 결과, BLEU_3을 제외한 나머지 BLEU 스코어에 대해 Transformer 모델의 BLEU 스코어가 더 높았다. 즉, Attention 모델보다 Transformer 모델의 문장 생성 성능이 더 좋았기 때문에 본 프로젝트의 이미지 캡셔닝 모델 디코더에는 Transformer 모델을 사용했다.
 
 ![blue-score](https://user-images.githubusercontent.com/79498819/187978756-d9670b48-4f03-432f-8419-d0ec479c763e.png)
 
