@@ -141,7 +141,7 @@ pip install -r backend_requirements.txt  # install
 
 * `RTX 2070`
 * `CUDA Version==11.2`
-* `cuddn==7.6.5`
+* `cudnn==7.6.5`
 
 # Keywords
 
