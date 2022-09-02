@@ -31,6 +31,10 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 > **딥러닝 기반 이미지 캡셔닝과 객체 인식을 이용한 작물 질병 진단 서비스**
 
+- 한국데이터산업진흥원 [데이터청년캠퍼스](https://dataonair.or.kr/bigjob/) 한국외국어대학교 과정
+
+<img src="https://user-images.githubusercontent.com/79498819/188051261-5ed85e48-f222-4f74-b68e-0553568eac8c.jpg  width="500" height="100"/>
+
 # Getting Start
 
 1. apk download : https://github.com/DI-LEE/crop-disease-diagnosis-service/releases
