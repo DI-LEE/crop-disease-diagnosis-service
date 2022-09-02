@@ -33,7 +33,7 @@ crop disease diagnosis service application with image-captioning and object-dete
 
 - [한국데이터산업진흥원](https://www.kdata.or.kr/) [데이터청년캠퍼스](https://dataonair.or.kr/bigjob/) 한국외국어대학교 과정
 
-![한국데이터산업진흥원 한국외국어대학교](https://user-images.githubusercontent.com/79498819/188060608-09829d9c-9a10-451c-aa5f-74bd4aedd412.jpg)
+![한국데이터산업진흥원외대로고리사이즈](https://user-images.githubusercontent.com/79498819/188061047-dfe7f2ea-3d98-401f-b3c4-ba0ac0a5707c.gif)
 
 # Getting Start
 
