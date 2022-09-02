@@ -2,6 +2,8 @@
 
 crop disease diagnosis service application with image-captioning and object-detection(deep learning)
 
+* github : https://github.com/DI-LEE/crop-disease-diagnosis-service
+
 # Contents
 
 1. [Team](#team)
