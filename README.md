@@ -2,7 +2,7 @@
 
 crop disease diagnosis service application with image-captioning and object-detection(deep learning)
 
-* github : https://github.com/DI-LEE/crop-disease-diagnosis-service
+* paper : https://www.mdpi.com/2076-3417/13/5/3148
 
 # Contents
 
