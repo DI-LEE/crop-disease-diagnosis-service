@@ -2,7 +2,8 @@
 
 crop disease diagnosis service application with image-captioning and object-detection(deep learning)
 
-* paper : https://doi.org/10.3390/app13053148https://www.mdpi.com/2076-3417/13/5/3148
+* paper
+   * Lee, D.I.; Lee, J.H.; Jang, S.H.; Oh, S.J.; Doo, I.C. Crop Disease Diagnosis with Deep Learning-Based Image Captioning and Object Detection. Appl. Sci. 2023, 13, 3148. https://doi.org/10.3390/app13053148
 
 # Contents
 
